@@ -13,6 +13,11 @@ public class Controller {
     StudentServiceImpl studentService;
     StudentsGroupServiceImpl studentsGroupServiceImpl;
 
+    public Controller() {
+        this.studentService = new StudentServiceImpl();
+        this.studentsGroupServiceImpl = new StudentsGroupServiceImpl();
+    }
+
     public StudentsGroup createStudentsGroup(List<Student> studentsList, Teacher groupTeacher) {
         return studentsGroupServiceImpl.createStudentsGroup(studentsList, groupTeacher);
     }

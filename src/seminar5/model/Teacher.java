@@ -1,7 +1,7 @@
 package seminar5.model;
 
 public class Teacher extends User {
-    static Integer idGenerator = 0;
+    static Integer idGenerator = 1;
     private Disciples disciplesTaught;
     private int idTeacher;
 
