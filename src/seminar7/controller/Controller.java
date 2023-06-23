@@ -56,7 +56,7 @@ public class Controller {
                 logger.log(Level.INFO, result.toString());
             }
             default -> {
-                String warningResult = "";
+                String warningResult = "Ошибка при вводе операции!";
                 logger.log(Level.WARNING, warningResult);
             }
         }

@@ -1,5 +1,7 @@
 package seminar7.model;
 
+import java.text.DecimalFormat;
+
 public class ComplexNum {
     private double real;
     private double imag;
@@ -31,10 +33,13 @@ public class ComplexNum {
     }
 
     public void soutComplex() {
+        String formattedDouble = "#0.00";
         if (imag > 0) {
-            System.out.println(real + " + " + imag + 'i');
+            System.out.println(new DecimalFormat(formattedDouble).format(real) + " + "
+                    + new DecimalFormat(formattedDouble).format(imag) + 'i');
         } else {
-            System.out.println(real + String.valueOf(imag) + 'i');
+            System.out.println(new DecimalFormat(formattedDouble).format(real) +
+                    new DecimalFormat(formattedDouble).format(imag) + 'i');
         }
     }
 }

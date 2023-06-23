@@ -5,11 +5,14 @@ import seminar7.model.ComplexNum;
 public class ComplexCalcDivision implements ComplexCalc {
     @Override
     public ComplexNum calcOperation(ComplexNum firstNum, ComplexNum secondNum) {
-        double numenator = ((firstNum.getReal() * secondNum.getReal() - firstNum.getReal() * secondNum.getImag()) +
-                        (firstNum.getImag() * secondNum.getReal() - firstNum.getImag() * secondNum.getImag()));
-        double denominator = secondNum.getReal() * secondNum.getReal() + secondNum.getImag() * secondNum.getImag();
+        double leftNum = ((firstNum.getReal() * secondNum.getReal() + firstNum.getImag() * secondNum.getImag()) /
+                (secondNum.getReal() * secondNum.getReal() + secondNum.getImag() * secondNum.getImag()));
+        double rightNum = ((firstNum.getImag() * secondNum.getReal() - firstNum.getReal() * secondNum.getImag()) /
+                (secondNum.getReal() * secondNum.getReal() + secondNum.getImag() * secondNum.getImag()));
 
-        return new ComplexNum(numenator, denominator);
+
+
+        return new ComplexNum(leftNum, rightNum);
     }
 
     @Override
